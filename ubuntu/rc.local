@@ -9,7 +9,7 @@
 
 [ ! -f /etc/ssl/emc/emercoin.key ] || [ ! -f /etc/ssl/emc/emercoin.crt ] && {
   mkdir -p /etc/ssl/emc
-  openssl req -nodes -x509 -newkey rsa:4096 -keyout /etc/ssl/emc/emercoin.key -out /etc/ssl/emc/emercoin.crt -days 3560 -subj /C=US/ST=Oregon/L=Portland/O=IT/CN=emercoin.local
+  openssl req -nodes -x509 -newkey rsa:4096 -keyout /etc/ssl/emc/emercoin.key -out /etc/ssl/emc/emercoin.crt -days 3560 -subj /C=CA/ST=QC/L=QC/O=IT/CN=private.ness
 }
 
 [ ! -f /etc/ssl/emc/emcweb.key ] || [ ! -f /etc/ssl/emc/emcweb.crt ] && {
@@ -31,10 +31,10 @@ rpcport=6662
 maxconnections=80
 gen=0
 daemon=1
-rpcssl=1
-rpcsslcertificatechainfile=/etc/ssl/emc/emercoin.crt
-rpcsslprivatekeyfile=/etc/ssl/emc/emercoin.key
-rpcsslciphers=HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4:!SSLv2
+rpcssl=0
+# rpcsslcertificatechainfile=/etc/ssl/emc/emercoin.crt
+# rpcsslprivatekeyfile=/etc/ssl/emc/emercoin.key
+# rpcsslciphers=HIGH:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4:!SSLv2
 EOF
 chmod 600 /var/lib/emc/.emercoin/emercoin.conf
 chown -R emc.emc /var/lib/emc/.emercoin
