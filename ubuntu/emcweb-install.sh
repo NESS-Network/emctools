@@ -16,7 +16,7 @@ pip install peewee
 a2enmod ssl
 a2enmod rewrite
 
-[ ! -f /etc/ssl/private/emcweb.key ] || [ ! -f /etc/ssl/certs/emcweb.crt ] && openssl req -nodes -x509 -newkey rsa:4096 -keyout /etc/ssl/private/emcweb.key -out /etc/ssl/certs/emcweb.crt -days 3560 -subj /C=CA/ST=QC/L=QC/O=IT/CN=Private.Ness
+[ ! -f /etc/ssl/private/emcweb.key ] || [ ! -f /etc/ssl/certs/emcweb.crt ] && openssl req -nodes -x509 -newkey rsa:4096 -keyout /etc/ssl/private/emcweb.key -out /etc/ssl/certs/emcweb.crt -days 3560 -subj /C=CA/ST=QC/L=QC/O=IT/CN=private.ness
 
 touch /usr/local/etc/emcssh_keys/emcweb
 
