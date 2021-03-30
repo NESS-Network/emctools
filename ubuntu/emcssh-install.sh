@@ -9,10 +9,10 @@ getent passwd emc >/dev/null || { echo "User 'emc' not found"; exit 1; }
 
 apt-get -y install wget make libcurl4-openssl-dev libjansson-dev
 
-wget https://dl.dropboxusercontent.com/u/15852900/emercoin/emcssh-0.0.3.tar.gz
-tar xvzf emcssh-0.0.3.tar.gz
-rm emcssh-0.0.3.tar.gz
-cd emcssh-0.0.3
+wget https://github.com/emercoin/emcssh/archive/refs/tags/0.0.4.tar.gz
+tar xvzf 0.0.4.tar.gz
+rm 0.0.4.tar.gz
+cd emcssh-0.0.4
 mv emcssh_config emcssh_config.orig
 
 cat<<EOF >emcssh_config
@@ -36,5 +36,5 @@ AuthorizedKeysCommand /usr/local/sbin/emcssh
 AuthorizedKeysCommandUser root
 EOF
 
-rm -rf emcssh-0.0.3
+rm -rf emcssh-0.0.4
 service ssh restart
