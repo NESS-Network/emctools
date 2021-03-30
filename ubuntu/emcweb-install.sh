@@ -16,7 +16,7 @@ pip install peewee
 a2enmod ssl
 a2enmod rewrite
 
-[ ! -f /etc/ssl/private/emcweb.key ] || [ ! -f /etc/ssl/certs/emcweb.crt ] && openssl req -nodes -x509 -newkey rsa:4096 -keyout /etc/ssl/private/emcweb.key -out /etc/ssl/certs/emcweb.crt -days 3560 -subj /C=US/ST=Oregon/L=Portland/O=IT/CN=emercoin.local
+[ ! -f /etc/ssl/private/emcweb.key ] || [ ! -f /etc/ssl/certs/emcweb.crt ] && openssl req -nodes -x509 -newkey rsa:4096 -keyout /etc/ssl/private/emcweb.key -out /etc/ssl/certs/emcweb.crt -days 3560 -subj /C=CA/ST=QC/L=QC/O=IT/CN=Private.Ness
 
 touch /usr/local/etc/emcssh_keys/emcweb
 
@@ -37,7 +37,7 @@ chmod 600 /var/lib/emcweb/config/rpc
 chown -R emc.emc /var/lib/emcweb
 
 cp -f /var/lib/emcweb/server.py /var/lib/emcweb/server.py.orig
-sed -i -e "s/gf6dfg87sfg7sf5gs4dfg5s7fgsd980n/`pwgen 30 1`/" /var/lib/emcweb/server.py
+sed -i -e "s/6dfg87sfg7sf5gs4dfg5s7fgsd980n/`pwgen 30 1`/" /var/lib/emcweb/server.py
 
 mkdir -p /var/lib/emc/ssl
 cp -f /var/lib/emcweb/emcssl_ca.crt /var/lib/emc/ssl
