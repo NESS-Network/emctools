@@ -3,7 +3,7 @@
 # Deps: Emercoind
 
 if [ `whoami` != 'root' ]; then echo "Run me as root"; exit 1; fi
-if [ ! -x /usr/local/bin/emercoind ]; then echo "Emercoind not found"; exit 1; fi
+if [ ! -x /usr/local/bin/emc ]; then echo "Emercoind not found"; exit 1; fi
 if [ ! -f /var/lib/emc/.emercoin/emercoin.conf ]; then echo "Emercoind not configured"; exit 1; fi
 getent passwd emc >/dev/null || { echo "User 'emc' not found"; exit 1; }
 
