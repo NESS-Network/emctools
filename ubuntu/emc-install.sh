@@ -17,7 +17,7 @@ useradd -m -d /var/lib/emc -k /tmp/emcskel -s /bin/false --uid 500 --gid 500 emc
 rmdir /tmp/emcskel
 
 mkdir -p /var/lib/emc/ssl
-openssl req -nodes -x509 -newkey rsa:4096 -keyout /var/lib/emc/ssl/emercoin.key -out /var/lib/emc/ssl/emercoin.crt -days 3560 -subj /C=CA/QC=/L=QC/O=IT/CN=PrivateNess.Network
+openssl req -nodes -x509 -newkey rsa:4096 -keyout /var/lib/emc/ssl/emercoin.key -out /var/lib/emc/ssl/emercoin.crt -days 3560 -subj /C=CA/ST=QC/L=QC/O=IT/CN=private.ness
 
 mkdir -p /var/lib/emc/.emercoin
 cat<<EOF >/var/lib/emc/.emercoin/emercoin.conf
