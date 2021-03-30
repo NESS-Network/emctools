@@ -6,7 +6,7 @@ getent passwd emc >/dev/null && { echo "User 'emc' already exists"; exit 1; }
 
 apt-get -y install wget pwgen openssl
 
-wget https://github.com/NESS-Network/emercoin/archive/refs/tags/v0.7.10emc.tar.gz
+wget https://github.com/emercoin/emercoin/archive/refs/tags/v0.7.10emc.tar.gz
 tar xvzf v0.7.10emc.tar.gz
 rm v0.7.10emc.tar.gz
 cp emercoin-0.7.10emc/bin/emc /usr/local/bin
